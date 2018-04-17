@@ -9,15 +9,9 @@ public class HelloController {
 	
 	private GreetingServices greetingService;
 	
-	
-	
 	public HelloController(GreetingServices greetingService) {
-		super();
 		this.greetingService = greetingService;
 	}
-
-
-
 	public String sayHello() {
 		System.out.println("Hello !!!!");
 		return greetingService.sayGreeting();
