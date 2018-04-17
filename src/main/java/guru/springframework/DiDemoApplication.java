@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 import guru.springframework.config.GreetingServicesConfig;
 import guru.springframework.controllers.ConstructorInjectedController;
@@ -20,7 +22,7 @@ public class DiDemoApplication {
 		ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);		
 		
 		HelloController helloCtr = (HelloController)ctx.getBean(HelloController.class);
-		
+				
 		
 		System.out.println("\n" + helloCtr.sayHello());
 		

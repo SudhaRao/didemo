@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 import guru.springframework.services.GreetingRepository;
+import guru.springframework.services.GreetingServices;
 import guru.springframework.services.GreetingServicesFactory;
 
 @Configuration
@@ -21,22 +22,22 @@ public class GreetingServicesConfig {
 	@Bean
 	@Primary
 	@Profile({"default","en"})
-	public GreetingServicesFactory englishGreetingServicesFactory(GreetingRepository grtRepo) {
-		return new GreetingServicesFactory(grtRepo);
+	public GreetingServices englishGreetingServicesFactory(GreetingServicesFactory grtRepo) {
+		return grtRepo.createGreetingService("en");
 	}
 	
 	@Bean
 	@Primary
 	@Profile("ka")
-	public GreetingServicesFactory KannadaGreetingServicesFactory(GreetingRepository grtRepo) {
-		return new GreetingServicesFactory(grtRepo);
+	public GreetingServices KannadaGreetingServicesFactory(GreetingServicesFactory grtRepo) {
+		return  grtRepo.createGreetingService("ka");
 	}
 	
 	@Bean
 	@Primary
 	@Profile("ma")
-	public GreetingServicesFactory MalayalamGreetingServicesFactory(GreetingRepository grtRepo) {
-		return new GreetingServicesFactory(grtRepo);
+	public GreetingServices MalayalamGreetingServicesFactory(GreetingServicesFactory grtRepo) {
+		return grtRepo.createGreetingService("ma");
 	}
 	
 	
