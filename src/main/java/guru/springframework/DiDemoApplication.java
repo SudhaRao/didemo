@@ -17,10 +17,7 @@ import guru.springframework.controllers.SetterInjectedController;
 public class DiDemoApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
-		
-		GreetingServicesConfig gsc = (GreetingServicesConfig)ctx.getBean(GreetingServicesConfig.class);
-		
+		ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);		
 		
 		HelloController helloCtr = (HelloController)ctx.getBean(HelloController.class);
 		
